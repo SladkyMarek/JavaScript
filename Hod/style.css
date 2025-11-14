@@ -1,0 +1,10 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#button {
+    padding: 20px 40px;
+}
