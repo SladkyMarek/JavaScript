@@ -7,20 +7,40 @@
       - Použij událost onclick nebo addEventListener.
 */
 
+      document.getElementById("btn31")
+            .addEventListener('click', () => alert("Hello world"))
+
 /* 32) Po kliknutí na tlačítko změň text vybraného HTML elementu.
       - Napiš funkci, která změní .textContent nebo .innerText.
       - Vyzkoušej použití arrow funkce.
 */
+
+      document.getElementById("btn32")
+      .addEventListener('click', () => document.getElementById("text32").innerText = "Zmena textu")
+      
 
 /* 33) Vypiš do <div> aktuální čas, který se bude každou sekundu aktualizovat.
       - Použij setInterval a vlastní funkci pro získání času.
       - Funkce by měla vracet formátovaný čas (HH:MM:SS).
 */
 
+      setInterval(() => {
+            let cas = new Date()
+            let H = cas.getHours()
+            let M = cas.getMinutes()
+            let s = cas.getSeconds()
+
+            document.getElementById("clock33").innerHTML = `${H}:${M}:${s}`
+      }
+      )
+
 /* 34) Po kliknutí na tlačítko změň barvu pozadí celé stránky.
       - Vytvoř funkci s parametrem (barva).
       - Vyzkoušej nastavit hodnotu přes document.body.style.
 */
+
+      document.getElementById("btn34")
+            .addEventListener('on click', () => document.getElementById("ukol34").style.backgroundColor = "black")
 
 /* 35) Po najetí myší na obrázek ho zvětši.
       - Použij eventy mouseover a mouseout.
