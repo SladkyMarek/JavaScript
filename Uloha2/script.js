@@ -38,3 +38,24 @@ else {
     console.log("Cislo je kladne")
 }
 */
+
+/* Uloha 5 
+
+let word = prompt("Zadej slovo")
+
+if(word.includes("a")) {
+    console.log("true")
+}
+else {
+    console.log("false")
+}
+*/
+
+/* Uloha 6 
+
+let word2 = prompt("Zadej slovo")
+
+    console.log()
+
+    ------- 
+*/
