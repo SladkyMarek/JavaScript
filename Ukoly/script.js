@@ -40,27 +40,55 @@
 */
 
       document.getElementById("btn34")
-            .addEventListener('on click', () => document.getElementById("ukol34").style.backgroundColor = "black")
+            .addEventListener('click', () => document.body.style.backgroundColor = "black")
 
 /* 35) Po najetí myší na obrázek ho zvětši.
       - Použij eventy mouseover a mouseout.
       - Změnu proveď pomocí třídy v CSS nebo style.width v JS.
 */
 
+      let img35 = document.getElementById("img35")
+      img35.addEventListener('mouseover', () => img35.style.width = "400px")
+      img35.addEventListener('mouseleave', () => img35.style.width = "200px")
+
 /* 36) Po odeslání formuláře vypiš hodnoty inputů do konzole.
       - Zakázat přirozené odeslání formuláře pomocí event.preventDefault().
       - Použij funkci, která načte hodnoty inputů.
 */
 
+      document.getElementById("form36")
+            .addEventListener('submit', function (e) {})
+
 /* 37) Vytvoř jednoduché „počítadlo kliknutí“.
       - Po každém kliknutí zvýší číslo o 1 a zobraz ho v HTML.
       - Proměnná se musí nacházet ve správném scope.
 */
+      let btn37 = document.getElementById("btn37")
+      let cislo = 0
+      btn37.addEventListener('click', () => cislo++)
+      btn37.addEventListener('click', () => document.getElementById("counter37").innerText = cislo)
 
 /* 38) Po kliknutí na tlačítko skryj nebo zobraz text.
       - Můžeš použít classList.toggle().
       - Zvaž použití anonymní nebo arrow funkce.
 */
+
+
+
+let shownText = true
+let btn38 = document.getElementById("btn38")
+
+btn38.addEventListener('click', function() {
+      if (!shownText) {
+            document.getElementById("text38").style.color = "white"
+            shownText = false
+      }
+      else {
+            document.getElementById("text38").style.color = "black"
+            shownText = true
+      }
+})
+
 
 /* 39) Validuj formulář – zkontroluj, jestli je vyplněné jméno a e-mail.
       - Pokud není validní, zobraz chybovou hlášku.
@@ -93,6 +121,16 @@
       - Použij Math.random a vlastní pole znaků.
 */
 
+      function generatePassword(x){
+            const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789#&@$ß€~/*-+"
+            let passwd = "";
+            for(let i = 0; i < x; ++i){
+                  const index = Math.floor(Math.random()*chars.length)
+                  passwd += chars[index]
+            }
+            return passwd
+      }
+
 /* 42) Spočítej faktoriál zadaného čísla.
       - Vytvoř klasickou funkci nebo arrow funkci.
       - Vyzkoušej rekurzi nebo cyklus.
@@ -107,6 +145,37 @@
       - Použij setInterval a clearInterval.
       - Funkce musí správně pracovat s proměnnými ve scope.
 */
+
+let interval = null
+let time = 0
+let H = 0
+let M = 0
+let S = 0
+
+function startTimer() {
+      if(interval)return
+      interval = setInterval(() => {
+            time ++
+            if(time == "1")
+            {
+                  time = 0
+                  S++
+            }
+            if(S == 60) {
+                  M++
+                  S = 0
+            }
+            document.getElementById("stopky44").textContent = `${H}:${M}:${S}:${time}`
+      }, 1000)
+}
+function stopTimer() {
+      clearInterval(interval)
+      interval = null
+}
+function resetTimer() {
+      time = 0
+      document.getElementById("stopky44").textContent = time
+}
 
 /* 45) Simuluj hod kostkou (1–6).
       - Funkce vrací náhodné číslo 1–6.
