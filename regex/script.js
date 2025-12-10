@@ -4,6 +4,7 @@ function funkce(e)
 }
 
 let jmeno
+const email = /([\w+-]\.?)+@+[a-z.-]+\.[a-zA-z]{2,}/g
 
 
 document.getElementById("number")
