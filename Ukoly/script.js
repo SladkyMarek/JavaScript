@@ -156,7 +156,7 @@ function startTimer() {
       if(interval)return
       interval = setInterval(() => {
             time ++
-            if(time == "1")
+            if(time == 200)
             {
                   time = 0
                   S++
@@ -166,7 +166,7 @@ function startTimer() {
                   S = 0
             }
             document.getElementById("stopky44").textContent = `${H}:${M}:${S}:${time}`
-      }, 1000)
+      }, 1)
 }
 function stopTimer() {
       clearInterval(interval)
@@ -174,7 +174,10 @@ function stopTimer() {
 }
 function resetTimer() {
       time = 0
-      document.getElementById("stopky44").textContent = time
+      S = 0
+      M = 0
+      H = 0
+      document.getElementById("stopky44").textContent = "0:0:0:0"
 }
 
 /* 45) Simuluj hod kostkou (1–6).
