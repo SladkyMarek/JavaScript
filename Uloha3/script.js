@@ -41,9 +41,6 @@ function callFunction(param) {
     }
 }
 
-
-
-
 // Úloha 92 – RangeError
 // Funkce createArray(size) vytvoří pole délky size.
 // Pokud je size mimo rozsah (např. > 10000), vyhodí RangeError.
